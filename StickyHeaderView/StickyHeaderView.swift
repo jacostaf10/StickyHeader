@@ -56,9 +56,21 @@ struct StickyHeaderView<Content: View, TBContent: ToolbarContent>: View {
 
 struct StickyHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        StickyHeaderView("Resumen") {
-            Circle()
+        StickyHeaderView("Sticky View", secondaryText: "Hey, that's pretty cool!", imageName: nil) {
+            print("Perfil")
+        } toolbarContent: {
+            ToolbarItem {
+                EditButton()
+            }
+        } content: {
+            ForEach(1...10, id: \.self) {_ in
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(.blue)
+                    .frame(height: 220)
+                    .padding()
+            }
         }
+
 
     }
 }
@@ -67,7 +79,7 @@ struct StickyHeaderView_Previews: PreviewProvider {
 @ViewBuilder
 func HeaderView(safeAreaTop: CGFloat, offsetY: CGFloat,
                                 title: String, secondaryText: String?, image: String?, imageAction: @escaping () -> Void,
-                                toolbarContent:  (() -> some ToolbarContent)?) -> some View {
+                                toolbarContent:  () -> some ToolbarContent) -> some View {
     var progress: CGFloat { -(offsetY / 80) > 1 ? -1 : (offsetY > 0 ? 0 : (offsetY / 80))}
     VStack {
         HStack(alignment: progress > -1 ? .bottom : .center) {
@@ -119,9 +131,7 @@ func HeaderView(safeAreaTop: CGFloat, offsetY: CGFloat,
             .padding(.bottom, -progress * 50)
     }
     .toolbar {
-        if let toolbarContent {
-            toolbarContent()
-        }
+        toolbarContent()
     }
     .toolbarBackground(.hidden, for: .navigationBar)
 }

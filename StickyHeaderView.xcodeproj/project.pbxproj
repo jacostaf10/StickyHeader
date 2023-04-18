@@ -11,6 +11,7 @@
 		4F0C326629EE9E5B0038E249 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C326529EE9E5B0038E249 /* ContentView.swift */; };
 		4F0C326829EE9E5C0038E249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C326729EE9E5C0038E249 /* Assets.xcassets */; };
 		4F0C326B29EE9E5C0038E249 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C326A29EE9E5C0038E249 /* Preview Assets.xcassets */; };
+		4F0C327229EE9E6B0038E249 /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C327129EE9E6B0038E249 /* StickyHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		4F0C326529EE9E5B0038E249 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4F0C326729EE9E5C0038E249 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F0C326A29EE9E5C0038E249 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4F0C327129EE9E6B0038E249 /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				4F0C326529EE9E5B0038E249 /* ContentView.swift */,
 				4F0C326729EE9E5C0038E249 /* Assets.xcassets */,
 				4F0C326929EE9E5C0038E249 /* Preview Content */,
+				4F0C327129EE9E6B0038E249 /* StickyHeaderView.swift */,
 			);
 			path = StickyHeaderView;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F0C326629EE9E5B0038E249 /* ContentView.swift in Sources */,
+				4F0C327229EE9E6B0038E249 /* StickyHeaderView.swift in Sources */,
 				4F0C326429EE9E5B0038E249 /* StickyHeaderViewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,13 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        StickyHeaderView("Bootcamp") {
+            ForEach(1...10, id: \.self) {_ in
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(.blue)
+                    .frame(height: 220)
+                    .padding()
+            }
         }
-        .padding()
+
     }
 }
 

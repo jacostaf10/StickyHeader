@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        StickyHeaderView("Bootcamp") {
+        StickyHeaderView("Main Screen") {
             ForEach(1...10, id: \.self) {_ in
                 RoundedRectangle(cornerRadius: 10)
                     .fill(.blue)

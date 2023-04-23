@@ -27,28 +27,24 @@ struct StickyHeaderView<Content: View, TBContent: ToolbarContent>: View {
     @State var offsetY: CGFloat = 0
     
     var body: some View {
-        GeometryReader { proxy in
-            let safeAreaToTop = proxy.safeAreaInsets.top
-            
-            NavigationStack {
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack {
-                        HeaderView(safeAreaTop: safeAreaToTop, offsetY: offsetY, title: title, secondaryText: secondaryText, image: imageName, imageAction: imageAction, toolbarContent: toolbarContent)
-                            .offset(y: -offsetY)
-                            .zIndex(1)
-                        
-                        LazyVStack {
-                            content
-                        }
-                        .zIndex(0)
+        NavigationStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack {
+                    HeaderView(safeAreaTop: UIDevice.topInsetSize, offsetY: offsetY, title: title, secondaryText: secondaryText, image: imageName, imageAction: imageAction, toolbarContent: toolbarContent)
+                        .offset(y: -offsetY)
+                        .zIndex(1)
+                    
+                    LazyVStack {
+                        content
                     }
-                    .offset(coordinateSpace: .named("SCROLL")) { offset in
-                        offsetY = offset
-                    }
+                    .zIndex(0)
                 }
-                .coordinateSpace(name: "SCROLL")
-                .edgesIgnoringSafeArea(.top)
+                .offset(coordinateSpace: .named("SCROLL")) { offset in
+                    offsetY = offset
+                }
             }
+            .coordinateSpace(name: "SCROLL")
+            .edgesIgnoringSafeArea(.top)
         }
     }
 }
